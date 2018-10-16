@@ -11,9 +11,9 @@ This is a quick and easy way to find an upcoming concert of your favorite artist
 
 There are four different ways this app can be used:
 
-* __node__ __liri.js__ __concert-this__ __`<artist/band name here>`__ - this will return the next upcoming concert for the searched for artist or band
+* __node__ __liri.js__ __concert-this__ `<artist/band name here>` - this will return the next upcoming concert for the searched for artist or band
 
-* __node__ __liri.js__ __movie-this__ __`<movie name here>`__ - this will return information about the searched for movie
+* __node__ __liri.js__ __movie-this__ `<movie name here>` - this will return information about the searched for movie
 
 * __node__ __liri.js__ __spotify-this-song__ `<song name here>` - this will return information about the searched for song
 
