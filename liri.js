@@ -2,7 +2,7 @@
 require("dotenv").config();
 var request = require("request");
 var keys = require("./keys.js");
-// var moment = require("moment");
+var moment = require("moment");
 // var spotify = new Spotify(keys.spotify);
 
 // Delcaring variables for user inputs
@@ -14,10 +14,14 @@ function bandsRequest () {
     request("https://rest.bandsintown.com/artists/" + userSearch + "/events?app_id=codingbootcamp", function (error, response, body) {
         if (!error && response.statusCode === 200) {
             var bandGuy = JSON.parse(body);
-            console.log(`Results for your search of ${userSearch}: 
+            var nextTime = bandGuy[0].datetime;
+            console.log("================================");
+            var time = moment(nextTime).format("MM/DD/YYYY");
+            console.log(`Next upcoming ${userSearch} event: 
             Venue Name: ${bandGuy[0].venue.name}
             Venue Location: ${bandGuy[0].venue.city}, ${bandGuy[0].venue.region}, ${bandGuy[0].venue.country}
-            Date of Event: `);
+            Date of Event: ${time}`);
+            console.log("=================================")
         }
     })
 } 
