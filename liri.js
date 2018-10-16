@@ -59,9 +59,13 @@ function spotifyRequest () {
         if (err) {
             return console.log("Error occurred " + err);
         } else {
+            var artists = data.tracks.items[0].artists;
+            for (i=0; i < artists.length; i++) {
+                var ArtistName = artists[i].name;
+            }
             console.log("=================================");
             console.log(`
-            Artist(s): ${data.tracks.items[0].artists}
+            Artist(s): ${ArtistName}
             Song name: ${data.tracks.items[0].name}
             Preview link: ${data.tracks.items[0].preview_url}
             Album: ${data.tracks.items[0].album.name}`);
