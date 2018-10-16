@@ -95,7 +95,7 @@ if (command === "concert-this") {
     if (userSearch) {
     bandsRequest();
     } else {
-        console.log("Please enter a search term");
+        console.log("Please search for something");
     }
 } else if (command === "spotify-this-song") {
     // Conditional search for default song if there is no user input
