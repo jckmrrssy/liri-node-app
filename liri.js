@@ -4,6 +4,7 @@ var request = require("request");
 var keys = require("./keys.js");
 var moment = require("moment");
 var Spotify = require("node-spotify-api");
+var fs = require("fs");
 
 
 // Delcaring variables for user inputs
@@ -58,22 +59,34 @@ function spotifyRequest () {
     }, function(err, data) {
         if (err) {
             return console.log("Error occurred " + err);
-        } else {
-            var artists = data.tracks.items[0].artists;
-            for (i=0; i < artists.length; i++) {
-                var ArtistName = artists[i].name;
-            }
-            console.log("=================================");
-            console.log(`
-            Artist(s): ${ArtistName}
-            Song name: ${data.tracks.items[0].name}
-            Preview link: ${data.tracks.items[0].preview_url}
-            Album: ${data.tracks.items[0].album.name}`);
-            console.log("=================================");
+        }  
+        var artists = data.tracks.items[0].artists;
+        for (i=0; i < artists.length; i++) {
+            var ArtistName = artists[i].name;
         }
+        console.log("=================================");
+        console.log(`
+        Artist(s): ${ArtistName}
+        Song name: ${data.tracks.items[0].name}
+        Preview link: ${data.tracks.items[0].preview_url}
+        Album: ${data.tracks.items[0].album.name}`);
+        console.log("=================================");
+        
     });
 }
 
+// Do what it says function
+function doIt () {
+    fs.readFile("random.txt", "utf8", function(error, data) {
+        if (error) {
+            return console.log(error);
+        } 
+        var dataArr = data.split(",");
+        userSearch = dataArr[1];
+        spotifyRequest();
+        
+    })
+}
 
 
 // Conditionls to call functions based on user input 
@@ -84,7 +97,7 @@ if (command === "concert-this") {
 } else if (command === "movie-this") {
     omdbRequest();
 } else if (command === "do-what-it-says") {
-    // fs pkg command
+    doIt();
 } else {
     console.log("Please enter a valid command")
 }
