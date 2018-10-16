@@ -19,7 +19,7 @@ There are four different ways this app can be used:
 
 * __node__ __liri.js__ __do-what-it-says__ - this will read the included random.txt file, and pass through a value to the spotify function, which will run and return song information about the song in the txt file
 
-### [Link to demo video] (https://drive.google.com/file/d/1tj05p-V68LGbbYE8P2s1lppTng5lPh9f/view)
+[Link to demo video] (https://drive.google.com/file/d/1tj05p-V68LGbbYE8P2s1lppTng5lPh9f/view)
 
 ## If you have questions
 
