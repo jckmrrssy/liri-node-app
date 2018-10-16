@@ -85,7 +85,7 @@ function doIt () {
         userSearch = dataArr[1];
         spotifyRequest();
         
-    })
+    });
 }
 
 
@@ -93,9 +93,21 @@ function doIt () {
 if (command === "concert-this") {
     bandsRequest();
 } else if (command === "spotify-this-song") {
+    // Conditional to search default song if there is no user input
+    if (userSearch) {
     spotifyRequest();
+    } else {
+        userSearch = "The Sign";
+        spotifyRequest();
+    }
 } else if (command === "movie-this") {
+    // Conditional to search default movie if there is no user input 
+    if (userSearch) {
     omdbRequest();
+    } else {
+        userSearch = "Mr. Nobody";
+        omdbRequest();
+    }
 } else if (command === "do-what-it-says") {
     doIt();
 } else {
