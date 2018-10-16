@@ -7,7 +7,7 @@ This Node.js application called Liri uses various node packages to make API requ
 
 ## Why it's useful
 
-This is a quick and easy way to find an upcoming concert of your favorite artist, find out more about that song you heard ont the radio, and learn some good movie trivia. 
+This is a quick and easy way to find an upcoming concert of your favorite artist, find out more about that song you heard on the radio, and learn some good movie trivia. 
 
 ## How it works
 
