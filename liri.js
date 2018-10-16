@@ -3,13 +3,14 @@ require("dotenv").config();
 var request = require("request");
 var keys = require("./keys.js");
 var moment = require("moment");
-// var spotify = new Spotify(keys.spotify);
+var Spotify = require("node-spotify-api");
+
 
 // Delcaring variables for user inputs
 let command = process.argv[2];
 let userSearch = process.argv[3];
 
-// Functions for requests / API calls
+// Bands API request function
 function bandsRequest () {
     request("https://rest.bandsintown.com/artists/" + userSearch + "/events?app_id=codingbootcamp", function (error, response, body) {
         if (!error && response.statusCode === 200) {
@@ -26,6 +27,7 @@ function bandsRequest () {
     });
 }; 
 
+// OMDB API request function
 function omdbRequest () {
     request("http://www.omdbapi.com/?apikey=trilogy&t=" + userSearch + "&plot=short", function (error, response, body) {
         if (!error && response.statusCode === 200) {
@@ -46,19 +48,41 @@ function omdbRequest () {
     });
 };
 
+// Spotify API request function
+function spotifyRequest () {
+    var spotify = new Spotify(keys.spotify);
+    spotify.search({
+        type: "track",
+        query: userSearch,
+        limit: 1, 
+    }, function(err, data) {
+        if (err) {
+            return console.log("Error occurred " + err);
+        } else {
+            console.log("=================================");
+            console.log(`
+            Artist(s): ${data.tracks.items[0].artists}
+            Song name: ${data.tracks.items[0].name}
+            Preview link: ${data.tracks.items[0].preview_url}
+            Album: ${data.tracks.items[0].album.name}`);
+            console.log("=================================");
+        }
+    });
+}
+
 
 
 // Conditionls to call functions based on user input 
 if (command === "concert-this") {
     bandsRequest();
 } else if (command === "spotify-this-song") {
-    // spotifyFunction()
+    spotifyRequest();
 } else if (command === "movie-this") {
     omdbRequest();
 } else if (command === "do-what-it-says") {
     // fs pkg command
 } else {
-    console.log("Please enter a valid command!")
+    console.log("Please enter a valid command")
 }
  
 
