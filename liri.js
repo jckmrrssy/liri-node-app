@@ -91,9 +91,14 @@ function doIt () {
 
 // Conditionls to call functions based on user input 
 if (command === "concert-this") {
+    // User input validation
+    if (userSearch) {
     bandsRequest();
+    } else {
+        console.log("Please enter a search term");
+    }
 } else if (command === "spotify-this-song") {
-    // Conditional to search default song if there is no user input
+    // Conditional search for default song if there is no user input
     if (userSearch) {
     spotifyRequest();
     } else {
@@ -101,7 +106,7 @@ if (command === "concert-this") {
         spotifyRequest();
     }
 } else if (command === "movie-this") {
-    // Conditional to search default movie if there is no user input 
+    // Conditional search for default movie if there is no user input 
     if (userSearch) {
     omdbRequest();
     } else {
