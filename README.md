@@ -1,6 +1,6 @@
 # Liri
 
-### [Demo](https://drive.google.com/file/d/1tj05p-V68LGbbYE8P2s1lppTng5lPh9f/view)
+## Watch a demo [here](https://drive.google.com/file/d/1tj05p-V68LGbbYE8P2s1lppTng5lPh9f/view)
 
 ## What it is
 This Node.js application called Liri uses various node packages to make API requests. Users are able search for songs, movies and upcoming band performances and will receive back information about their given search term. Specifically, it requests information from the Bands in Town, Spotify and OMDB API's.
@@ -20,7 +20,7 @@ SSH:
 $ git clone git@github.com:jckmrrssy/liri-node-app.git
 ````
 
-You will need to at an .env file at the root of the app containing Spotify API keys. For help getting your own API keys visit:
+You will need to add an .env file at the root of the app containing your Spotify API keys. For help getting your own API keys visit:
 ```
 https://developer.spotify.com/documentation/web-api/
 ````
@@ -36,14 +36,12 @@ There are four different ways this app can be used.
 
 Return the next upcoming concert for the searched for artist or band:
 ````
-$ node liri.js concert-this `<search artist/band name here>`
+$ node liri.js concert-this <search artist/band name here>
 ````
- 
 Return information about the searched for movie:
 ````
 $ node liri.js movie-this <search movie name here> 
 ````
-
 Return information about the searched for song:
 ````
 $ node liri.js spotify-this-song <search song name here> 
@@ -52,6 +50,7 @@ This will read the included random.txt file and pass through a value to the spot
 ````
 $ node liri.js do-what-it-says 
 ````
+
 ## Authors
 See contribution history [here](https://github.com/jckmrrssy/liri-node-app/graphs/contributors)
 
