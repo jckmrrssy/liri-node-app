@@ -3,7 +3,7 @@
 ## Watch a demo [here](https://drive.google.com/file/d/1tj05p-V68LGbbYE8P2s1lppTng5lPh9f/view)
 
 ## What it is
-This Node.js application called Liri uses various node packages to make API requests. Users are able search for songs, movies and upcoming band performances and will receive back information about their given search term. Specifically, it requests information from the Bands in Town, Spotify and OMDB API's.
+This Node.js command line application called Liri uses various node packages to make API requests. Users are able search for songs, movies and upcoming band performances and will receive back information about their given search term. Specifically, it requests information from the Bands in Town, Spotify and OMDB API's.
 
 ## Why it's useful
 This is a quick and easy way to find an upcoming concert of your favorite artist, find out more about that song you heard on the radio, and learn some good movie trivia. 
